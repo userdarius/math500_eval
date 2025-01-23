@@ -73,8 +73,8 @@ def main():
         # Initialize results list
         results = []
 
-        for i, row in tqdm(eval_dataset.iterrows(), total=len(eval_dataset)):
-            print(row)
+        for idx, item in enumerate(tqdm(eval_dataset)):
+            print(item)
 
     except Exception as e:
         logging.critical(f"Critical error in main execution: {str(e)}", exc_info=True)
