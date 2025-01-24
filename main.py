@@ -135,7 +135,7 @@ def main():
     try:
         # Load models and tokenizer
         logging.info("Loading models and tokenizer")
-        model_name = "meta-llama/Llama-2-7b-chat"  # Updated to an available model
+        model_name = "meta-llama/Llama-3.1-8b-instruct"  # Updated to an available model
         model, tokenizer = load_model_and_tokenizer(model_name)
         logging.info("Models loaded successfully")
 
