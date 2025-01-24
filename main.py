@@ -74,7 +74,7 @@ def evaluate_model(model, tokenizer, item: Dict[str, Any]) -> Dict[str, Any]:
     with torch.no_grad():
         output_ids = model.generate(
             **inputs,
-            max_length=100,
+            max_new_tokens=100,
             num_return_sequences=1,
             temperature=0.7,
             do_sample=True,
