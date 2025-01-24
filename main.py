@@ -84,11 +84,17 @@ def evaluate_model(model, tokenizer, item: Dict[str, Any]) -> Dict[str, Any]:
     # Decode response
     response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
+    print(response)
+
     # Parse answer from response
     predicted_answer = parse_model_response(response)
 
+    print(predicted_answer)
+
     # Calculate correctness
     correctness = evaluate_correctness(predicted_answer, item["answer"])
+
+    print(correctness)
 
     return {
         "problem_id": item.get("unique_id", ""),
