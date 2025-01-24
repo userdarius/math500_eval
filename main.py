@@ -7,7 +7,7 @@ import numpy as np
 import json
 from typing import Dict, List, Any
 from model import load_model_and_tokenizer
-from dataset import get_dataset
+from data import get_dataset
 
 
 def format_math_prompt(problem: Dict[str, Any]) -> str:
