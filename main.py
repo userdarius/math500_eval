@@ -141,7 +141,7 @@ def main():
 
         # Load dataset
         logging.info("Loading MATH500 dataset")
-        dataset = get_dataset("hendrycks/MATH")  # Using the full MATH dataset
+        dataset = get_dataset("HuggingFaceH4/MATH-500")  # Using the full MATH dataset
         eval_dataset = dataset["test"].select(range(500))  # Taking first 500 examples
         logging.info(f"Dataset size: {len(eval_dataset)} documents")
 
