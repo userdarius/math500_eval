@@ -12,9 +12,8 @@ from data import get_dataset
 
 def format_math_prompt(problem: Dict[str, Any]) -> str:
     """Format a math problem into a prompt for the model."""
-    return f"""Solve this mathematics problem step by step:
-Problem: {problem['problem']}
-Let's approach this step by step:"""
+    return f"""Solve this mathematics problem and return the answer only in latex:
+    Problem: {problem['problem']}"""
 
 
 def parse_model_response(response: str) -> str:
@@ -84,8 +83,10 @@ def evaluate_model(model, tokenizer, item: Dict[str, Any]) -> Dict[str, Any]:
     # Decode response
     response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
-    print(response)
+    # remove the prompt from the response
+    response = response.replace(prompt, "")
 
+    print(response)
     # Parse answer from response
     predicted_answer = parse_model_response(response)
 
