@@ -12,7 +12,7 @@ from data import get_dataset
 
 def format_math_prompt(problem: Dict[str, Any]) -> str:
     """Format a math problem into a prompt for the model."""
-    return f"""Solve this mathematics problem and only return the answer in latex:
+    return f"""What is the answer to this math problem? Only give the answer and in latex:
     Problem: {problem['problem']}"""
 
 
@@ -78,6 +78,7 @@ def evaluate_model(model, tokenizer, item: Dict[str, Any]) -> Dict[str, Any]:
             temperature=0.7,
             do_sample=True,
             pad_token_id=tokenizer.pad_token_id,
+            repetition_penalty=1.2,
         )
 
     # Decode response
