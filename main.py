@@ -12,7 +12,7 @@ from data import get_dataset
 
 def format_math_prompt(problem: Dict[str, Any]) -> str:
     """Format a math problem into a prompt for the model."""
-    return f"""Solve this mathematics problem and return the answer only in latex:
+    return f"""Solve this mathematics problem and only return the answer in latex:
     Problem: {problem['problem']}"""
 
 
